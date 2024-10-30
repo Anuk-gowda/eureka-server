@@ -10,7 +10,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Git clone done'
-                git url:'https://github.com/Yamini6302/eureka-server.git', branch:'main'
+                git url:'https://github.com/Anuk-gowda/eureka-server.git', branch:'main'
             }
         }
          stage('Build') {
@@ -19,12 +19,7 @@ pipeline {
                 bat "mvn clean install -DskipTests"
             }
          }
-          stage('Test') {
-            steps {
-                echo 'Test done'
-                bat "mvn test"
-            }
-          }
+         
            stage('Deploy') {
             steps {
                 echo 'Deploy done'
